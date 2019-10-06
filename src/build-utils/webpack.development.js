@@ -40,12 +40,24 @@ module.exports = () => ({
             onEnd: {
                 copy: [
                     {
-                        source: './src/vendor/jquery.jplayer.min.js',
-                        destination: './assets/js/jquery.jplayer.min.js'
+                        source: './src/vendor/popup/magnific-popup.css',
+                        destination: './assets/css/magnific-popup.css'
                     },
                     {
-                        source: './src/vendor/jquery.hideseek.min.js',
-                        destination: './assets/js/jquery.hideseek.min.js'
+                        source: './src/vendor/popup/jquery.magnific-popup.min.js',
+                        destination: './assets/js/jquery.magnific-popup.min.js'
+                    },
+                    {
+                        source: './src/vendor/responsiveslides/responsiveslides.min.js',
+                        destination: './assets/js/responsiveslides.min.js'
+                    },
+                    {
+                        source: './src/vendor/responsiveslides/responsiveslides.css',
+                        destination: './assets/css/responsiveslides.css'
+                    },
+                    {
+                        source: './src/vendor/isotope.pkgd.min.js',
+                        destination: './assets/js/isotope.pkgd.min.js'
                     }
                 ]
             }

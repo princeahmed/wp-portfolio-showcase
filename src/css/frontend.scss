@@ -1,22 +1,4 @@
-//abstracts
 @import
-"abstracts/mixins",
-"abstracts/variables",
-"abstracts/placeholder",
-"abstracts/mq";
-//vendors
-//base
-@import
-"base/reset",
-"base/fonts";
-/* layout */
-@import
-"layout/sidebar",
-"layout/listing",
-"layout/single";
-//components
-@import
-"components/search",
-"components/player";
-//pages
-//themes
+'components/variables',
+'components/mq',
+'components/style';

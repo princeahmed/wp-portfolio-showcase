@@ -90,7 +90,7 @@ final class WP_Portfolio_Showcase {
 		include_once WP_PORTFOLIO_SHOWCASE_INCLUDES . '/hook-functions.php';
 		include_once WP_PORTFOLIO_SHOWCASE_INCLUDES . '/class-cpt.php';
 		include_once WP_PORTFOLIO_SHOWCASE_INCLUDES . '/prince-settings/prince-loader.php';
-		include_once WP_PORTFOLIO_SHOWCASE_INCLUDES . '/script-functions.php';
+		include_once WP_PORTFOLIO_SHOWCASE_INCLUDES . '/enqueue.php';
 
 		//admin includes
 		if ( is_admin() ) {

@@ -1,9 +1,10 @@
 {
   "name": "wp-portfolio-showcase",
-  "version": "2.0.1",
+  "version": "0.0.1",
   "description": "desc",
   "private": true,
   "scripts": {
+    "webpack": "webpack",
     "dev": "npm run webpack -- --env.mode development --watch",
     "prod": "npm run webpack -- --env.mode production"
   },

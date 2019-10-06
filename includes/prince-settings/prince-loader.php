@@ -1,14 +1,4 @@
 <?php
-/**
- * Plugin Name: Prince Settings
- * Plugin URI:  https://github.com/princeahmed/prince/
- * Description: Settings UI Builder for WordPress. A simple way to create & save Settings and Meta Boxes for free or premium themes.
- * Version:     1.0.0
- * Author:      Prince Ahmed
- * Author URI:  http://princeahmed.com
- * License:     GPLv3
- * Text Domain: prince-text-doamin
- */
 
 /**
  * This is the Settings loader class.

@@ -1,6 +1,11 @@
 <?php
 
-defined( 'ABSPATH' ) || exit();
+defined( 'ABSPATH' ) || exit;
+
+//option name
+add_filter( 'prince_options_id', function () {
+	return 'wp_portfolio_showcase_settings';
+} );
 
 /**
  * Initialize the custom Settings.
