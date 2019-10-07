@@ -55,6 +55,24 @@ function wp_portfolio_showcase_settings() {
 				'type'    => 'on_off',
 				'section' => 'general'
 			),
+
+			array(
+				'id'      => 'portfolio_page',
+				'label'   => __( 'Portfolio Page', 'wp_radio' ),
+				'desc'    => __( 'Select he portfolio page where all the portfolio will be displayed', 'wp_radio' ),
+				'std'     => get_option('wp_portfolio_showcase_page'),
+				'type'    => 'page_select',
+				'section' => 'general'
+			),
+
+			array(
+				'id'      => 'posts_per_page',
+				'label'   => __( 'Portfolio per Page', 'wp_radio' ),
+				'desc'    => __( 'How many portfolio will be displayed in the portfolio page', 'wp_radio' ),
+				'std'     => 12,
+				'type'    => 'text',
+				'section' => 'general'
+			),
 		)
 	);
 

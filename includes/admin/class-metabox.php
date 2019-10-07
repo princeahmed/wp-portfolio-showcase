@@ -1,7 +1,7 @@
 <?php
 
 /* Block direct access */
-defined( 'ABSPATH' ) || exit();
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Class MetaBox
@@ -38,13 +38,48 @@ class WP_Portfolio_Showcase_MetaBox {
 
 		$metaboxes['wp_portfolio_showcase_metabox'] = array(
 			'id'       => 'wp_portfolio_showcase_metabox',
-			'title'    => __( 'Project Information', 'wp-radio' ),
-			//'desc'     => __( 'Add Additional Information for Project', 'wp-radio' ),
+			'title'    => __( 'Portfolio Information', 'wp-radio' ),
 			'pages'    => array( 'portfolio' ),
 			'context'  => 'normal',
 			'priority' => 'high',
 			'fields'   => apply_filters( 'wp_portfolio_showcase_metabox_fields', array(
-					'client' => array(
+					array(
+						'label' => __( 'General', 'wp-radio' ),
+						'id'    => 'general_tab',
+						'type'  => 'tab',
+					),
+					array(
+						'label'    => __( 'Portfolio Type', 'wp-radio' ),
+						'id'       => 'type',
+						'type'     => 'radio',
+						'desc'     => __( 'Select the portfolio type.', 'wp-radio' ),
+						'std'      => 'default',
+						'operator' => 'and',
+						'choices'  => array(
+							array(
+								'value' => 'default',
+								'label' => __( 'Default', 'theme-text-domain' ),
+							),
+							array(
+								'value' => 'gallery',
+								'label' => __( 'Image Gallery', 'theme-text-domain' ),
+							),
+							array(
+								'value' => 'video',
+								'label' => __( 'Video', 'theme-text-domain' ),
+							),
+							array(
+								'value' => 'external',
+								'label' => __( 'External Link', 'theme-text-domain' ),
+							),
+						)
+					),
+					array(
+						'label' => __( 'Details', 'wp-radio' ),
+						'id'    => 'details_tab',
+						'type'  => 'tab',
+					),
+					array(
 						'label' => __( 'Client', 'wp-radio' ),
 						'id'    => 'client',
 						'type'  => 'text',
@@ -54,7 +89,7 @@ class WP_Portfolio_Showcase_MetaBox {
 						),
 					),
 
-					'date' => array(
+					array(
 						'label' => __( 'Date', 'wp-radio' ),
 						'id'    => 'date',
 						'type'  => 'text',
@@ -64,7 +99,7 @@ class WP_Portfolio_Showcase_MetaBox {
 						),
 					),
 
-					'skills' => array(
+					array(
 						'label' => __( 'Skills', 'wp-radio' ),
 						'id'    => 'skills',
 						'type'  => 'text',
@@ -74,7 +109,7 @@ class WP_Portfolio_Showcase_MetaBox {
 						),
 					),
 
-					'url' => array(
+					array(
 						'label' => __( 'URL', 'wp-radio' ),
 						'id'    => 'url',
 						'type'  => 'text',
@@ -83,26 +118,29 @@ class WP_Portfolio_Showcase_MetaBox {
 							'placeholder' => 'https://projecturl.com'
 						),
 					),
+					array(
+						'label' => __( 'Gallery/ Video', 'wp-radio' ),
+						'id'    => 'gallery_tab',
+						'type'  => 'tab',
+					),
+					array(
+						'label' => __( 'Portfolio Gallery', 'wp-radio' ),
+						'desc'  => __( 'Select the images for the portfolio', 'wp-radio' ),
+						'id'    => 'gallery',
+						'type'  => 'gallery',
+					),
+					array(
+						'label' => __( 'Portfolio Video', 'wp-radio' ),
+						'desc'  => __( 'Enter the video URL or select the video from media', 'wp-radio' ),
+						'id'    => 'video',
+						'type'  => 'upload',
+					),
 
 				)
 			)
 
 		);
 
-		$metaboxes['wp_portfolio_showcase_gallery_metabox'] = array(
-			'id'       => 'wp_portfolio_showcase_gallery_metabox',
-			'title'    => __( 'Project Gallery', 'wp-radio' ),
-			'desc'     => __( 'Select the images for the project gallery', 'wp-radio' ),
-			'pages'    => array( 'portfolio' ),
-			'context'  => 'side',
-			'priority' => 'low',
-			'fields'   => array(
-				array(
-					'id'   => 'gallery',
-					'type' => 'gallery',
-				),
-			)
-		);
 
 		if ( function_exists( 'prince_register_meta_box' ) ) {
 			foreach ( $metaboxes as $metabox ) {

@@ -1,11 +1,5 @@
 <?php
 
-/**
- * Installation related functions and actions.
- *
- * @since 2.0.2
- */
-
 defined( 'ABSPATH' ) || exit;
 
 /**

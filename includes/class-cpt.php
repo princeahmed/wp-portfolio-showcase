@@ -58,7 +58,7 @@ class WP_Portfolio_Showcase_CPT {
 	public function register_taxonomies() {
 		register_taxonomy( 'portfolio_category', array( 'portfolio' ), array(
 			'hierarchical'      => true,
-			'labels'            => $this->get_taxonomy_label( 'Categories','Category', 'Categories' ),
+			'labels'            => $this->get_taxonomy_label( 'Portfolio Categories','Category', 'Categories' ),
 			'show_ui'           => true,
 			'show_admin_column' => true,
 			'query_var'         => true,
@@ -67,7 +67,7 @@ class WP_Portfolio_Showcase_CPT {
 
 		register_taxonomy( 'portfolio_tag', array( 'portfolio' ), array(
 			'hierarchical'      => false,
-			'labels'            => $this->get_taxonomy_label( 'Tags', 'Tag', 'Tags' ),
+			'labels'            => $this->get_taxonomy_label( 'Portfolio Tags', 'Tag', 'Tags' ),
 			'show_ui'           => true,
 			'show_admin_column' => true,
 			'rewrite'           => apply_filters( 'wp_portfolio_showcase_tag_slug', [ 'slug' => 'portfolio-tag' ] ),

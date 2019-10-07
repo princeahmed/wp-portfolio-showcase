@@ -1,21 +1,21 @@
 <?php
 
-$settings = get_option( 'wp_radio_settings' );
+$settings = get_option( 'wp_portfolio_showcase_settings' );
 if ( ! empty( $settings ) && 'on' == $settings['delete_data'] ) {
 	global $wpdb;
 
 	//delete pages
-	wp_delete_post( $settings['stations_page'], true );
+	wp_delete_post( $settings['portfolio_page'], true );
 
 	// Delete options.
-	$wpdb->query( "DELETE FROM $wpdb->options WHERE option_name LIKE 'wp\_radio\_%';" );
+	$wpdb->query( "DELETE FROM $wpdb->options WHERE option_name LIKE 'wp\_portfolio\_showcase\_%';" );
 
 	// Delete posts + data.
-	$wpdb->query( "DELETE FROM {$wpdb->posts} WHERE post_type = 'wp_radio';" );
+	$wpdb->query( "DELETE FROM {$wpdb->posts} WHERE post_type = 'portfolio';" );
 	$wpdb->query( "DELETE meta FROM {$wpdb->postmeta} meta LEFT JOIN {$wpdb->posts} posts ON posts.ID = meta.post_id WHERE posts.ID IS NULL;" );
 
 	// Delete term taxonomies.
-	foreach ( array( 'radio_country', 'radio_genre' ) as $taxonomy ) {
+	foreach ( array( 'portfolio_category', 'portfolio_tag' ) as $taxonomy ) {
 		$wpdb->delete(
 			$wpdb->term_taxonomy,
 			array(

@@ -24,11 +24,10 @@
             });
 
         };
+
     // Call the functions
     if ($(my_img).length) {
-
         magnifPopup();
-
     }
 
     $('.info .image_overlay').on("click", function () {
@@ -63,6 +62,7 @@
 
         $(this).addClass('active_filter').siblings().removeClass('active_filter');
 
+        var $grid = $('.grid');
         $grid.isotope({filter: filterValue});
 
     });
@@ -76,8 +76,8 @@
 
         $(project_slider).responsiveSlides({
             nav: true,
-            prevText: '<i class="pe-7s-angle-left"></i>',
-            nextText: '<i class="pe-7s-angle-right"></i>'
+            prevText: '<i class="dashicons dashicons-arrow-left-alt2"></i>',
+            nextText: '<i class="dashicons dashicons-arrow-right-alt2"></i>'
         });
 
     }

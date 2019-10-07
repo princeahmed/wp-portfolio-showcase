@@ -100,10 +100,10 @@ final class WP_Portfolio_Showcase {
 		}
 
 		//frontend includes
-		if ( ! is_admin() ) {
+		//if ( ! is_admin() ) {
 			include_once WP_PORTFOLIO_SHOWCASE_INCLUDES . '/template-functions.php';
 			include_once WP_PORTFOLIO_SHOWCASE_INCLUDES . '/class-shortcode.php';
-		}
+		//}
 
 	}
 

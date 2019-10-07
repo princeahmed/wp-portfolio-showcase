@@ -3321,7 +3321,7 @@ if ( ! function_exists( 'prince_type_upload' ) ) {
 				echo '<div class="prince-ui-image-wrap"><img src="' . esc_url( $field_value ) . '" alt="" /></div>';
 			}
 
-			echo '<a href="javascript:(void);" class="prince-ui-remove-media prince-ui-button button button-secondary light" title="' . __( 'Remove Media', 'wp-radio' ) . '"><span class="icon dashicons dashicons-trash"></span>' . __( 'Remove Media', 'wp-radio' ) . '</a>';
+			echo '<a href="javascript:(void);" class="prince-ui-remove-media prince-ui-button button button-secondary light" title="' . __( 'Remove Media', 'wp-radio' ) . '"><span class="icon dashicons dashicons-trash"></span></a>';
 
 			echo '</div>';
 

@@ -9,7 +9,7 @@ class WP_Portfolio_Showcase_Admin {
 		add_filter( 'prince_header_version_text', [ $this, 'settings_version_text' ] );
 		add_filter( 'prince_header_logo_link', [ $this, 'settings_page_logo' ] );
 		add_filter( 'prince_settings_parent_slug', [ $this, 'settings_menu' ] );
-		add_filter( 'display_post_states', [ $this, 'station_page_status' ], 10, 2 );
+		add_filter( 'display_post_states', [ $this, 'portfolio_page_status' ], 10, 2 );
 	}
 
 	/**
@@ -77,18 +77,18 @@ class WP_Portfolio_Showcase_Admin {
 	}
 
 	/**
-	 * Add status for radios base page
+	 * Add status for portfolio page
 	 *
 	 * @param $states
 	 * @param $post
 	 *
 	 * @return array
 	 */
-	function station_page_status( $states, $post ) {
+	function portfolio_page_status( $states, $post ) {
 
-		if ( prince_get_option( 'stations_page' ) == $post->ID ) {
+		if ( prince_get_option( 'portfolio_page' ) == $post->ID ) {
 
-			$states[] = __( 'Station List Page', 'wp-radio' );
+			$states[] = __( 'Portfolio Page', 'wp-radio' );
 
 		}
 
