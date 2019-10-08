@@ -89,17 +89,17 @@ class WP_Portfolio_Showcase_CPT {
 	protected static function get_posts_labels( $menu_name, $singular, $plural, $type = 'plural' ) {
 		$labels = array(
 			'name'               => 'plural' == $type ? $plural : $singular,
-			'all_items'          => sprintf( __( "All %s", 'wp-radio' ), $plural ),
+			'all_items'          => sprintf( __( "All %s", 'wp-portfolio-showcase' ), $plural ),
 			'singular_name'      => $singular,
-			'add_new'            => sprintf( __( 'Add New %s', 'wp-radio' ), $singular ),
-			'add_new_item'       => sprintf( __( 'Add New %s', 'wp-radio' ), $singular ),
-			'edit_item'          => sprintf( __( 'Edit %s', 'wp-radio' ), $singular ),
-			'new_item'           => sprintf( __( 'New %s', 'wp-radio' ), $singular ),
-			'view_item'          => sprintf( __( 'View %s', 'wp-radio' ), $singular ),
-			'search_items'       => sprintf( __( 'Search %s', 'wp-radio' ), $plural ),
-			'not_found'          => sprintf( __( 'No %s found', 'wp-radio' ), $plural ),
-			'not_found_in_trash' => sprintf( __( 'No %s found in Trash', 'wp-radio' ), $plural ),
-			'parent_item_colon'  => sprintf( __( 'Parent %s:', 'wp-radio' ), $singular ),
+			'add_new'            => sprintf( __( 'Add New %s', 'wp-portfolio-showcase' ), $singular ),
+			'add_new_item'       => sprintf( __( 'Add New %s', 'wp-portfolio-showcase' ), $singular ),
+			'edit_item'          => sprintf( __( 'Edit %s', 'wp-portfolio-showcase' ), $singular ),
+			'new_item'           => sprintf( __( 'New %s', 'wp-portfolio-showcase' ), $singular ),
+			'view_item'          => sprintf( __( 'View %s', 'wp-portfolio-showcase' ), $singular ),
+			'search_items'       => sprintf( __( 'Search %s', 'wp-portfolio-showcase' ), $plural ),
+			'not_found'          => sprintf( __( 'No %s found', 'wp-portfolio-showcase' ), $plural ),
+			'not_found_in_trash' => sprintf( __( 'No %s found in Trash', 'wp-portfolio-showcase' ), $plural ),
+			'parent_item_colon'  => sprintf( __( 'Parent %s:', 'wp-portfolio-showcase' ), $singular ),
 			'menu_name'          => $menu_name,
 		);
 
@@ -119,17 +119,17 @@ class WP_Portfolio_Showcase_CPT {
 	 */
 	protected static function get_taxonomy_label( $menu_name, $singular, $plural ) {
 		$labels = array(
-			'name'              => sprintf( _x( '%s', 'taxonomy general name', 'wp-radio' ), $plural ),
-			'singular_name'     => sprintf( _x( '%s', 'taxonomy singular name', 'wp-radio' ), $singular ),
-			'search_items'      => sprintf( __( 'Search %', 'wp-radio' ), $plural ),
-			'all_items'         => sprintf( __( 'All %s', 'wp-radio' ), $plural ),
-			'parent_item'       => sprintf( __( 'Parent %s', 'wp-radio' ), $singular ),
-			'parent_item_colon' => sprintf( __( 'Parent %s:', 'wp-radio' ), $singular ),
-			'edit_item'         => sprintf( __( 'Edit %s', 'wp-radio' ), $singular ),
-			'update_item'       => sprintf( __( 'Update %s', 'wp-radio' ), $singular ),
-			'add_new_item'      => sprintf( __( 'Add New %s', 'wp-radio' ), $singular ),
-			'new_item_name'     => sprintf( __( 'New % Name', 'wp-radio' ), $singular ),
-			'menu_name'         => __( $menu_name, 'wp-radio' ),
+			'name'              => sprintf( _x( '%s', 'taxonomy general name', 'wp-portfolio-showcase' ), $plural ),
+			'singular_name'     => sprintf( _x( '%s', 'taxonomy singular name', 'wp-portfolio-showcase' ), $singular ),
+			'search_items'      => sprintf( __( 'Search %', 'wp-portfolio-showcase' ), $plural ),
+			'all_items'         => sprintf( __( 'All %s', 'wp-portfolio-showcase' ), $plural ),
+			'parent_item'       => sprintf( __( 'Parent %s', 'wp-portfolio-showcase' ), $singular ),
+			'parent_item_colon' => sprintf( __( 'Parent %s:', 'wp-portfolio-showcase' ), $singular ),
+			'edit_item'         => sprintf( __( 'Edit %s', 'wp-portfolio-showcase' ), $singular ),
+			'update_item'       => sprintf( __( 'Update %s', 'wp-portfolio-showcase' ), $singular ),
+			'add_new_item'      => sprintf( __( 'Add New %s', 'wp-portfolio-showcase' ), $singular ),
+			'new_item_name'     => sprintf( __( 'New % Name', 'wp-portfolio-showcase' ), $singular ),
+			'menu_name'         => __( $menu_name, 'wp-portfolio-showcase' ),
 		);
 
 		return $labels;

@@ -89,21 +89,21 @@ final class WP_Portfolio_Showcase {
 		include_once WP_PORTFOLIO_SHOWCASE_INCLUDES . '/core-functions.php';
 		include_once WP_PORTFOLIO_SHOWCASE_INCLUDES . '/hook-functions.php';
 		include_once WP_PORTFOLIO_SHOWCASE_INCLUDES . '/class-cpt.php';
-		include_once WP_PORTFOLIO_SHOWCASE_INCLUDES . '/prince-settings/prince-loader.php';
 		include_once WP_PORTFOLIO_SHOWCASE_INCLUDES . '/enqueue.php';
 
 		//admin includes
 		if ( is_admin() ) {
+			include_once WP_PORTFOLIO_SHOWCASE_INCLUDES . '/prince-settings/prince-loader.php';
 			include_once WP_PORTFOLIO_SHOWCASE_INCLUDES . '/admin/class-admin.php';
 			include_once WP_PORTFOLIO_SHOWCASE_INCLUDES . '/admin/class-metabox.php';
 			include_once WP_PORTFOLIO_SHOWCASE_INCLUDES . '/admin/admin-settings.php';
 		}
 
 		//frontend includes
-		//if ( ! is_admin() ) {
+		if ( ! is_admin() ) {
 			include_once WP_PORTFOLIO_SHOWCASE_INCLUDES . '/template-functions.php';
 			include_once WP_PORTFOLIO_SHOWCASE_INCLUDES . '/class-shortcode.php';
-		//}
+		}
 
 	}
 
@@ -143,7 +143,7 @@ final class WP_Portfolio_Showcase {
 	 * @return array
 	 */
 	function plugin_action_links( $links ) {
-		$links[] = '<a href="' . admin_url( 'edit.php?post_type=wp_radio&page=import-stations' ) . '">' . __( 'Settings', 'wp-radio' ) . '</a>';
+		$links[] = '<a href="' . admin_url( 'edit.php?post_type=wp_radio&page=import-stations' ) . '">' . __( 'Settings', 'wp-portfolio-showcase' ) . '</a>';
 
 		return $links;
 	}

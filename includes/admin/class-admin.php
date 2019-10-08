@@ -30,12 +30,12 @@ class WP_Portfolio_Showcase_Admin {
 		$choices = array(
 			array(
 				'value' => 'left-sidebar',
-				'label' => __( 'Left Country Sidebar', 'wp-radio' ),
+				'label' => __( 'Left Country Sidebar', 'wp-portfolio-showcase' ),
 				'src'   => PRINCE_ASSETS_URL . 'left-sidebar.png'
 			),
 			array(
 				'value' => 'full-width',
-				'label' => __( 'Full Width (no sidebar)', 'wp-radio' ),
+				'label' => __( 'Full Width (no sidebar)', 'wp-portfolio-showcase' ),
 				'src'   => PRINCE_ASSETS_URL . 'full-width.png'
 			),
 		);
@@ -53,7 +53,7 @@ class WP_Portfolio_Showcase_Admin {
 	 *
 	 */
 	function settings_version_text( $text ) {
-		return __( 'WP Portfolio Showcase - ' . WP_PORTFOLIO_SHOWCASE_VERSION, 'wp-radio' );
+		return __( 'WP Portfolio Showcase - ' . WP_PORTFOLIO_SHOWCASE_VERSION, 'wp-portfolio-showcase' );
 	}
 
 	/**
@@ -88,7 +88,7 @@ class WP_Portfolio_Showcase_Admin {
 
 		if ( prince_get_option( 'portfolio_page' ) == $post->ID ) {
 
-			$states[] = __( 'Portfolio Page', 'wp-radio' );
+			$states[] = __( 'Portfolio Page', 'wp-portfolio-showcase' );
 
 		}
 

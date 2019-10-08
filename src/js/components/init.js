@@ -2,50 +2,27 @@
     /*--------------------------------
             08. MagnifPopup Plugin
     ----------------------------------*/
-    var my_img = '.my_img',
-        magnifPopup = function () {
-
-            $(my_img).magnificPopup({
-                type: 'image',
-                removalDelay: 300,
-                mainClass: 'mfp-with-zoom',
-                gallery: {
-                    enabled: true
-                },
-                zoom: {
-                    enabled: true,
-                    duration: 300,
-                    easing: 'ease-in-out',
-                    opener: function (openerElement) {
-
-                        return openerElement.is('img') ? openerElement : openerElement.find('img');
-                    }
-                }
-            });
-
-        };
-
-    // Call the functions
-    if ($(my_img).length) {
-        magnifPopup();
-    }
+    $('.portfolio-gallery').each(function () {
+        $(this).magnificPopup({
+            delegate: 'a',
+            type: 'image',
+            gallery: {
+                enabled: true,
+                tPrev: 'Previous',
+                tNext: 'Next'
+            }
+        });
+    });
 
     $('.info .image_overlay').on("click", function () {
 
-        $(this).parents(".project_content").find(my_img).trigger("click");
+        $(this).parents(".project_content").find('.portfolio-gallery>a:first-child').trigger("click");
 
     });
 
     $('.popup-with-zoom-anim').magnificPopup({
 
         type: 'inline',
-        fixedContentPos: false,
-        fixedBgPos: true,
-        overflowY: 'auto',
-        closeBtnInside: true,
-        preloader: false,
-        midClick: true,
-        removalDelay: 300,
         mainClass: 'my-mfp-zoom-in'
 
     });
@@ -56,14 +33,12 @@
 
 
     //-- filter items on button click --//
-    $('.ul-filter li').on('click', function () {
+    $('.ul-filter>span').on('click', function () {
 
         var filterValue = $(this).attr('data-filter');
 
         $(this).addClass('active_filter').siblings().removeClass('active_filter');
-
-        var $grid = $('.grid');
-        $grid.isotope({filter: filterValue});
+        $('.portfolio-items').isotope({filter: filterValue});
 
     });
 

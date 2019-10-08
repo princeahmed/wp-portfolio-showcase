@@ -7,10 +7,20 @@ add_filter( 'prince_options_id', function () {
 	return 'wp_portfolio_showcase_settings';
 } );
 
+//settings menu slug
+add_filter( 'prince_settings_menu_slug', function () {
+	return 'wp-portfolio-showcase-settings';
+} );
+
+//settings page title
+add_filter( 'prince_settings_page_title', function () {
+	return 'WP Portfolio Showcase Settings';
+} );
+
 /**
  * Initialize the custom Settings.
  */
-add_action( 'init', 'wp_portfolio_showcase_settings' );
+add_action( 'admin_init', 'wp_portfolio_showcase_settings' );
 
 /**
  * Build the custom settings & update Prince.
@@ -41,7 +51,7 @@ function wp_portfolio_showcase_settings() {
 			array(
 				'id'    => 'general',
 				'icon'  => 'dashicons dashicons-admin-generic',
-				'title' => __( 'General Settings', 'wp-radio' )
+				'title' => __( 'General Settings', 'wp-portfolio-showcase' )
 			),
 
 		),

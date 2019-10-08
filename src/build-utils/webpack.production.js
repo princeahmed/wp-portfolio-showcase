@@ -69,15 +69,28 @@ module.exports = () => ({
                         {source: './includes', destination: './build/includes'},
                         {source: './languages', destination: './build/languages'},
                         {source: './templates', destination: './build/templates'},
-                        {source: './wp-radio.php', destination: './build/wp-radio.php'},
+                        {source: './wp-portfolio-showcase.php', destination: './build/wp-portfolio-showcase.php'},
+                        {source: './uninstall.php', destination: './build/uninstall.php'},
                         {source: './readme.txt', destination: './build/readme.txt'},
                         {
-                            source: './src/vendor/jquery.jplayer.min.js',
-                            destination: './assets/js/jquery.jplayer.min.js'
+                            source: './src/vendor/popup/magnific-popup.css',
+                            destination: './assets/css/magnific-popup.css'
                         },
                         {
-                            source: './src/vendor/jquery.hideseek.min.js',
-                            destination: './assets/js/jquery.hideseek.min.js'
+                            source: './src/vendor/popup/jquery.magnific-popup.min.js',
+                            destination: './assets/js/jquery.magnific-popup.min.js'
+                        },
+                        {
+                            source: './src/vendor/responsiveslides/responsiveslides.min.js',
+                            destination: './assets/js/responsiveslides.min.js'
+                        },
+                        {
+                            source: './src/vendor/responsiveslides/responsiveslides.css',
+                            destination: './assets/css/responsiveslides.css'
+                        },
+                        {
+                            source: './src/vendor/isotope.pkgd.min.js',
+                            destination: './assets/js/isotope.pkgd.min.js'
                         },
                         {source: './assets', destination: './build/assets'}
                     ]

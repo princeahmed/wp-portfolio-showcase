@@ -38,100 +38,100 @@ class WP_Portfolio_Showcase_MetaBox {
 
 		$metaboxes['wp_portfolio_showcase_metabox'] = array(
 			'id'       => 'wp_portfolio_showcase_metabox',
-			'title'    => __( 'Portfolio Information', 'wp-radio' ),
+			'title'    => __( 'Portfolio Information', 'wp-portfolio-showcase' ),
 			'pages'    => array( 'portfolio' ),
 			'context'  => 'normal',
 			'priority' => 'high',
 			'fields'   => apply_filters( 'wp_portfolio_showcase_metabox_fields', array(
 					array(
-						'label' => __( 'General', 'wp-radio' ),
+						'label' => __( 'General', 'wp-portfolio-showcase' ),
 						'id'    => 'general_tab',
 						'type'  => 'tab',
 					),
 					array(
-						'label'    => __( 'Portfolio Type', 'wp-radio' ),
+						'label'    => __( 'Portfolio Type', 'wp-portfolio-showcase' ),
 						'id'       => 'type',
 						'type'     => 'radio',
-						'desc'     => __( 'Select the portfolio type.', 'wp-radio' ),
+						'desc'     => __( 'Select the portfolio type.', 'wp-portfolio-showcase' ),
 						'std'      => 'default',
 						'operator' => 'and',
 						'choices'  => array(
 							array(
 								'value' => 'default',
-								'label' => __( 'Default', 'theme-text-domain' ),
+								'label' => __( 'Default', 'wp-portfolio-showcase' ),
 							),
 							array(
 								'value' => 'gallery',
-								'label' => __( 'Image Gallery', 'theme-text-domain' ),
+								'label' => __( 'Lightbox Gallery', 'wp-portfolio-showcase' ),
 							),
 							array(
 								'value' => 'video',
-								'label' => __( 'Video', 'theme-text-domain' ),
+								'label' => __( 'Popup Video', 'wp-portfolio-showcase' ),
 							),
 							array(
 								'value' => 'external',
-								'label' => __( 'External Link', 'theme-text-domain' ),
+								'label' => __( 'External Link', 'wp-portfolio-showcase' ),
 							),
 						)
 					),
 					array(
-						'label' => __( 'Details', 'wp-radio' ),
+						'label' => __( 'Details', 'wp-portfolio-showcase' ),
 						'id'    => 'details_tab',
 						'type'  => 'tab',
 					),
 					array(
-						'label' => __( 'Client', 'wp-radio' ),
+						'label' => __( 'Client', 'wp-portfolio-showcase' ),
 						'id'    => 'client',
 						'type'  => 'text',
-						'desc'  => __( 'Enter the project client name (Optional).', 'wp-radio' ),
+						'desc'  => __( 'Enter the project client name (Optional).', 'wp-portfolio-showcase' ),
 						'attrs' => array(
 							'placeholder' => 'Client Name'
 						),
 					),
 
 					array(
-						'label' => __( 'Date', 'wp-radio' ),
+						'label' => __( 'Date', 'wp-portfolio-showcase' ),
 						'id'    => 'date',
 						'type'  => 'text',
-						'desc'  => __( 'Enter the project date (Optional).', 'wp-radio' ),
+						'desc'  => __( 'Enter the project date (Optional).', 'wp-portfolio-showcase' ),
 						'attrs' => array(
 							'placeholder' => 'March 19, 2019'
 						),
 					),
 
 					array(
-						'label' => __( 'Skills', 'wp-radio' ),
+						'label' => __( 'Skills', 'wp-portfolio-showcase' ),
 						'id'    => 'skills',
 						'type'  => 'text',
-						'desc'  => __( 'Enter the project related skills (Optional).', 'wp-radio' ),
+						'desc'  => __( 'Enter the project related skills (Optional).', 'wp-portfolio-showcase' ),
 						'attrs' => array(
 							'placeholder' => 'HTML5, JS, CSS3'
 						),
 					),
 
 					array(
-						'label' => __( 'URL', 'wp-radio' ),
+						'label' => __( 'URL', 'wp-portfolio-showcase' ),
 						'id'    => 'url',
 						'type'  => 'text',
-						'desc'  => __( 'Enter the project URL (Optional).', 'wp-radio' ),
+						'desc'  => __( 'Enter the project URL (Optional).', 'wp-portfolio-showcase' ),
 						'attrs' => array(
 							'placeholder' => 'https://projecturl.com'
 						),
 					),
 					array(
-						'label' => __( 'Gallery/ Video', 'wp-radio' ),
+						'label' => __( 'Gallery/ Video', 'wp-portfolio-showcase' ),
 						'id'    => 'gallery_tab',
 						'type'  => 'tab',
 					),
 					array(
-						'label' => __( 'Portfolio Gallery', 'wp-radio' ),
-						'desc'  => __( 'Select the images for the portfolio', 'wp-radio' ),
+						'label' => __( 'Portfolio Gallery', 'wp-portfolio-showcase' ),
+						'desc'  => __( 'Select the images for the portfolio', 'wp-portfolio-showcase' ),
 						'id'    => 'gallery',
 						'type'  => 'gallery',
 					),
 					array(
-						'label' => __( 'Portfolio Video', 'wp-radio' ),
-						'desc'  => __( 'Enter the video URL or select the video from media', 'wp-radio' ),
+						'label' => __( 'Portfolio Video', 'wp-portfolio-showcase' ),
+						'desc'  => __( 'Enter the video URL or select the video from media', 'wp-portfolio-showcase' ),
 						'id'    => 'video',
 						'type'  => 'upload',
 					),

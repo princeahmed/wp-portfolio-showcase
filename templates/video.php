@@ -1,18 +1,13 @@
-<!--project 3 (Youtube Video)-->
-<div class="col-xs-12 col-sm-6 item design">
-	<div class="project_content">
-		<div class="my__img">
-			<img src="<?php echo WP_PORTFOLIO_SHOWCASE_ASSETS_URL ?>/images/work-3.jpg" alt=''>
-		</div>
-		<div class="info">
-			<div class="display-table">
-				<div class="display-table-cell">
-					<a href="https://www.youtube.com/watch?v=hpeYWdkUtcE" class="video-popup">
-						<h3>Youtube Video</h3>
-						<p>Design</p>
-					</a>
-				</div>
-			</div>
-		</div>
-	</div>
+<div class="item <?php wp_portfolio_showcase_category_class( $post->ID ); ?>">
+    <div class="project_content">
+        <div class="portfolio-img">
+			<?php wp_portfolio_showcase_thumbnail( $post->ID ); ?>
+        </div>
+        <div class="info">
+            <a href="<?php echo prince_get_meta( $post->ID, 'video' ); ?>" class="video-popup">
+                <h3><?php echo get_the_title( $post->ID ); ?></h3>
+                <p><?php wp_portfolio_showcase_category( $post->ID ); ?></p>
+            </a>
+        </div>
+    </div>
 </div>

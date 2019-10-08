@@ -261,7 +261,7 @@ if ( ! class_exists( 'MetaBox' ) ) {
 						$required_setting = array(
 							array(
 								'id'        => 'title',
-								'label'     => __( 'Title', 'wp-radio' ),
+								'label'     => __( 'Title', 'wp-portfolio-showcase' ),
 								'desc'      => '',
 								'std'       => '',
 								'type'      => 'text',

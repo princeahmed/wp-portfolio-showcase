@@ -58,7 +58,7 @@ function wp_portfolio_showcase_video( $post_id ) {
 function wp_portfolio_showcase_url( $post_id ) {
 	$url = prince_get_meta( $post_id, 'url' );
 
-	echo ! empty( $url ) ? '<a href="' . $url . '" class="demo">Visit website</a>' : '';
+	echo ! empty( $url ) ? '<a href="' . $url . '" target="_blank" class="demo">Visit website</a>' : '';
 }
 
 function wp_portfolio_showcase_client( $post_id ) {
@@ -77,4 +77,11 @@ function wp_portfolio_showcase_skills( $post_id ) {
 	$skills = prince_get_meta( $post_id, 'skills' );
 
 	echo ! empty( $skills ) ? '<span><strong>Skills </strong>: ' . $skills . '</span>' : '';
+}
+
+function wp_portfolio_showcase_category_class( $post_id ) {
+	$categories = wp_get_object_terms( $post_id, 'portfolio_category' );
+	$categories = wp_list_pluck( $categories, 'slug' );
+
+	echo implode( ' ', $categories );
 }

@@ -1,8 +1,7 @@
-<!--project 1 (Project popup)-->
-<div class="col-xs-12 col-sm-6 item grid-sizer design">
+<div class="item <?php wp_portfolio_showcase_category_class( $post->ID ); ?>">
     <div class="project_content">
 
-        <div class="my__img">
+        <div class="portfolio-img">
 			<?php wp_portfolio_showcase_thumbnail( $post->ID ); ?>
         </div>
 
@@ -16,14 +15,14 @@
     </div>
 </div><!--Project Details-->
 
-<div id="portfolio-<?php echo $post->ID; ?>" class="zoom-anim-dialog mfp-hide slider-popup">
+<div id="portfolio-<?php echo $post->ID; ?>" class="zoom-anim-dialog mfp-hide portfolio-content">
 
-    <div class="col-sm-6">
+    <div class="portfolio-media">
 
 		<?php
 		$slides = explode( ',', prince_get_meta( $post->ID, 'gallery' ) );
 
-		if ( ! empty( $slides ) ) { ?>
+		if ( ! empty( array_filter($slides) ) ) { ?>
             <!--Start slider-->
             <div class="project__slider">
                 <ul class="project-slider">
@@ -35,18 +34,22 @@
                 </ul>
             </div><!--End slider-->
 
-		<?php } ?>
+		<?php } elseif ( has_post_thumbnail( $post->ID ) ) {
+		    echo get_the_post_thumbnail($post->ID, 'full');
+		} ?>
 
 
-        <!--= Youtube Video =-->
+        <!--= Video =-->
 		<?php wp_portfolio_showcase_video( $post->ID ); ?>
 
     </div>
 
-    <div class="col-sm-6">
+    <div class="portfolio-info">
         <h3><?php echo get_the_title( $post ) ?></h3>
         <div class="project_info">
-			<?php wp_portfolio_showcase_client( $post->ID ); ?><?php wp_portfolio_showcase_date( $post->ID ); ?><?php wp_portfolio_showcase_skills( $post->ID ); ?>
+			<?php wp_portfolio_showcase_client( $post->ID ); ?><?php wp_portfolio_showcase_date( $post->ID ); ?>
+
+			<?php wp_portfolio_showcase_skills( $post->ID ); ?>
         </div>
 
         <p><?php echo apply_filters( 'the_content', $post->post_content ); ?></p>

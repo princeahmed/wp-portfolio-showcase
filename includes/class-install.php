@@ -24,7 +24,7 @@ class WP_Portfolio_Showcase_Install {
 
 		$id = wp_insert_post( array(
 			'post_type'   => 'page',
-			'post_title'  => esc_html__( 'Portfolio', 'wp-radio' ),
+			'post_title'  => esc_html__( 'Portfolio', 'wp-portfolio-showcase' ),
 			'post_status' => 'publish',
 		) );
 

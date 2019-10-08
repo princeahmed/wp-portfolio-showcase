@@ -40,10 +40,6 @@ module.exports = () => ({
             onEnd: {
                 copy: [
                     {
-                        source: './src/vendor/bootstrap.css',
-                        destination: './assets/css/bootstrap.css'
-                    },
-                    {
                         source: './src/vendor/popup/magnific-popup.css',
                         destination: './assets/css/magnific-popup.css'
                     },
