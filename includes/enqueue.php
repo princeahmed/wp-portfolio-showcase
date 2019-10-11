@@ -8,7 +8,7 @@ defined( 'ABSPATH' ) || exit;
  *
  * @param $hook
  *
- * @since 1.0.0
+ * @since 0.0.1
  *
  */
 function wp_portfolio_scripts() {

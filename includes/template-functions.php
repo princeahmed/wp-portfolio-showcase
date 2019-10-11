@@ -2,12 +2,12 @@
 
 
 /* Block direct access */
-defined( 'ABSPATH' ) || exit;
+defined( 'ABSPATH' ) || exit();
 
 /**
  * Get template files
  *
- * since 1.0.0
+ * since 0.0.1
  *
  * @param        $template_name
  * @param array $args
@@ -51,12 +51,13 @@ function portfolio_page_content() {
 	wp_portfolio_showcase_template( 'portfolio' );
 	$html = ob_get_clean();
 
+	global $wp_query;
 
-	global $wp_query, $post;
+	$post = get_post(prince_get_settings('portfolio_page'));
 
-	$content_prefix = $post->post_content;
+	$content_prefix = apply_filters('the_content', $post->post_content);
 
-	$post_title = $post->post_title;
+	$post_title = apply_filters('the_title', $post->post_title);
 
 	$post_name = ! empty( $post->post_name ) ? $post->post_name : '';
 
@@ -99,8 +100,6 @@ function portfolio_page_content() {
 	$wp_query->is_404        = false;
 	$wp_query->is_page       = true;
 	$wp_query->is_single     = true;
-	$wp_query->is_archive    = false;
-	$wp_query->is_tax        = true;
 	$wp_query->max_num_pages = 0;
 
 	// Prepare everything for rendering.

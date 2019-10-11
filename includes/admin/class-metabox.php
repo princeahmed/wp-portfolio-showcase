@@ -8,9 +8,9 @@ defined( 'ABSPATH' ) || exit;
  *
  * Handle metaboxes
  *
- * @package Prince\WP_Radio
+ * @package WP_Portfolio_Showcase
  *
- * @since 1.0.0
+ * @since 0.0.1
  */
 class WP_Portfolio_Showcase_MetaBox {
 
@@ -18,7 +18,7 @@ class WP_Portfolio_Showcase_MetaBox {
 	 * MetaBox constructor.
 	 * Initialize the custom Meta Boxes for prince-settings api.
 	 *
-	 * @since 1.0.0
+	 * @since 0.0.1
 	 */
 	function __construct() {
 		add_action( 'admin_init', array( $this, 'meta_boxes' ) );
@@ -30,7 +30,7 @@ class WP_Portfolio_Showcase_MetaBox {
 	 * Create a custom meta boxes array that we pass to
 	 * the Prince Meta Box API Class.
 	 *
-	 * @since 1.0.0
+	 * @since 0.0.1
 	 */
 	function meta_boxes() {
 
@@ -157,7 +157,7 @@ class WP_Portfolio_Showcase_MetaBox {
 	 * @param $field_id
 	 *
 	 * @return bool
-	 * @since 1.0.0
+	 * @since 0.0.1
 	 *
 	 */
 	function wp_editor_media_buttons( $true, $field_id ) {
@@ -177,7 +177,7 @@ class WP_Portfolio_Showcase_MetaBox {
 	 * @param $field_id
 	 *
 	 * @return bool
-	 * @since 1.0.0
+	 * @since 0.0.1
 	 *
 	 */
 	function wp_editor_tinymce( $true, $field_id ) {

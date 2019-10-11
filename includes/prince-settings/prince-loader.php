@@ -7,7 +7,10 @@
  * @author    Prince Ahmed <israilahmed5@gmail.com>
  * @copyright Copyright (c) 2019, Prince Ahmed
  */
+
 namespace Prince\Settings;
+
+defined('ABSPATH') || exit();
 
 if ( ! class_exists( 'Prince\Settings\Loader' ) ) {
 
@@ -21,7 +24,7 @@ if ( ! class_exists( 'Prince\Settings\Loader' ) ) {
 		 * @return    void
 		 *
 		 * @access    public
-		 * @since     1.0.0
+		 * @since     0.0.1
 		 */
 		public function __construct() {
 			add_action( 'plugins_loaded', array( $this, 'load_prince_settings' ), 1 );
@@ -34,7 +37,7 @@ if ( ! class_exists( 'Prince\Settings\Loader' ) ) {
 		 * @return    void
 		 *
 		 * @access    public
-		 * @since     1.0.0.2
+		 * @since     0.0.1.2
 		 */
 		public function load_prince_settings() {
 			/* setup the constants */
@@ -59,10 +62,10 @@ if ( ! class_exists( 'Prince\Settings\Loader' ) ) {
 		 * @return    void
 		 *
 		 * @access    private
-		 * @since     1.0.0
+		 * @since     0.0.1
 		 */
 		private function constants() {
-			define( 'PRINCE_ASSETS_URL', trailingslashit(plugin_dir_url( __FILE__ ).'/assets') );
+			define( 'PRINCE_ASSETS_URL', trailingslashit( plugin_dir_url( __FILE__ ) . '/assets' ) );
 		}
 
 		/**
@@ -101,7 +104,7 @@ if ( ! class_exists( 'Prince\Settings\Loader' ) ) {
 		}
 
 		/* include frontend files */
-		public function includes(){
+		public function includes() {
 			include( __DIR__ . "/includes" . DIRECTORY_SEPARATOR . "frontend-functions.php" );
 		}
 
@@ -125,7 +128,7 @@ if ( ! class_exists( 'Prince\Settings\Loader' ) ) {
 
 
 			/* Adds the Theme Option page to the admin bar */
-			//add_action( 'admin_bar_menu', 'prince_register_settings_admin_bar_menu', 10 );
+			add_action( 'admin_bar_menu', 'prince_register_settings_admin_bar_menu', 10 );
 
 			/* prepares the after save do_action */
 			add_action( 'admin_init', 'prince_after_settings_save', 1 );
@@ -182,7 +185,7 @@ if ( ! class_exists( 'Prince\Settings\Loader' ) ) {
 		 * AJAX utility function for adding a new list item setting.
 		 */
 		public function add_list_item_setting() {
-			echo prince_settings_view( $_REQUEST['name'] . '[settings]', $_REQUEST['count'] );
+			echo prince_settings_view( esc_attr( $_REQUEST['name'] ) . '[settings]', esc_attr( $_REQUEST['count'] ) );
 			die();
 		}
 
@@ -190,7 +193,7 @@ if ( ! class_exists( 'Prince\Settings\Loader' ) ) {
 		 * AJAX utility function for adding new contextual help content.
 		 */
 		public function add_the_contextual_help() {
-			echo prince_contextual_help_view( $_REQUEST['name'], $_REQUEST['count'] );
+			echo prince_contextual_help_view( esc_attr( $_REQUEST['name'] ), esc_attr( $_REQUEST['count'] ) );
 			die();
 		}
 
@@ -198,7 +201,7 @@ if ( ! class_exists( 'Prince\Settings\Loader' ) ) {
 		 * AJAX utility function for adding a new choice.
 		 */
 		public function add_choice() {
-			echo prince_choices_view( $_REQUEST['name'], $_REQUEST['count'] );
+			echo prince_choices_view( esc_attr( $_REQUEST['name'] ), esc_attr( $_REQUEST['count'] ) );
 			die();
 		}
 
@@ -207,7 +210,7 @@ if ( ! class_exists( 'Prince\Settings\Loader' ) ) {
 		 */
 		public function add_list_item() {
 			check_ajax_referer( 'prince', 'nonce' );
-			prince_list_item_view( $_REQUEST['name'], $_REQUEST['count'], array(), $_REQUEST['post_id'], $_REQUEST['get_option'], unserialize( prince_decode( $_REQUEST['settings'] ) ), $_REQUEST['type'] );
+			prince_list_item_view( esc_attr( $_REQUEST['name'] ), esc_attr( $_REQUEST['count'] ), array(), esc_attr( $_REQUEST['post_id'] ), esc_attr( $_REQUEST['get_option'] ), unserialize( prince_decode( esc_attr( $_REQUEST['settings'] ) ) ), esc_attr( $_REQUEST['type'] ) );
 			die();
 		}
 
@@ -216,7 +219,7 @@ if ( ! class_exists( 'Prince\Settings\Loader' ) ) {
 		 */
 		public function add_social_links() {
 			check_ajax_referer( 'prince', 'nonce' );
-			prince_social_links_view( $_REQUEST['name'], $_REQUEST['count'], array(), $_REQUEST['post_id'], $_REQUEST['get_option'], unserialize( prince_decode( $_REQUEST['settings'] ) ), $_REQUEST['type'] );
+			prince_social_links_view( esc_attr($_REQUEST['name']), esc_attr($_REQUEST['count']), array(), esc_attr($_REQUEST['post_id']), esc_attr($_REQUEST['get_option']), unserialize( prince_decode( esc_attr($_REQUEST['settings']) ) ), esc_attr($_REQUEST['type']) );
 			die();
 		}
 
@@ -227,8 +230,8 @@ if ( ! class_exists( 'Prince\Settings\Loader' ) ) {
 		 * the real attachment IDs on the fly. Here we just need to
 		 * pass in the post ID to get the ball rolling.
 		 *
-		 * @param     array     The current settings
-		 * @param     object    The post object
+		 * @param array     The current settings
+		 * @param object    The post object
 		 *
 		 * @return    array
 		 *
@@ -244,7 +247,7 @@ if ( ! class_exists( 'Prince\Settings\Loader' ) ) {
 
 			// Set the Prince post ID
 			if ( ! is_object( $post ) ) {
-				$post_id = isset( $_GET['post'] ) ? $_GET['post'] : ( isset( $_GET['post_ID'] ) ? $_GET['post_ID'] : 0 );
+				$post_id = isset( $_GET['post'] ) ? sanitize_text_field($_GET['post']) : ( isset( $_GET['post_ID'] ) ? sanitize_text_field($_GET['post_ID']) : 0 );
 				if ( $post_id == 0 && function_exists( 'prince_get_media_post_ID' ) ) {
 					$post_id = prince_get_media_post_ID();
 				}
@@ -280,7 +283,7 @@ if ( ! class_exists( 'Prince\Settings\Loader' ) ) {
 
 				foreach ( $_POST['ids'] as $id ) {
 
-					$thumbnail = wp_get_attachment_image_src( $id, 'thumbnail' );
+					$thumbnail = wp_get_attachment_image_src( intval($id), 'thumbnail' );
 
 					$return .= '<li><img  src="' . $thumbnail[0] . '" width="75" height="75" /></li>';
 
@@ -308,8 +311,8 @@ if ( ! class_exists( 'Prince\Settings\Loader' ) ) {
 				prince_fetch_google_fonts();
 
 				echo json_encode( array(
-					'variants' => prince_recognized_google_font_variants( $_POST['field_id'], $_POST['family'] ),
-					'subsets'  => prince_recognized_google_font_subsets( $_POST['field_id'], $_POST['family'] )
+					'variants' => prince_recognized_google_font_variants( esc_attr( $_POST['field_id'] ), esc_attr( $_POST['family'] ) ),
+					'subsets'  => prince_recognized_google_font_subsets( esc_attr( $_POST['field_id'] ), esc_attr( $_POST['family'] ) )
 				) );
 
 				exit();

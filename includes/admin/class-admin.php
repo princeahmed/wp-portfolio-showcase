@@ -18,7 +18,7 @@ class WP_Portfolio_Showcase_Admin {
 	 * @param $text
 	 *
 	 * @return array|string
-	 * @since 1.0.0
+	 * @since 0.0.1
 	 *
 	 */
 	function template_layout_images( $choices, $field_id ) {
@@ -49,7 +49,7 @@ class WP_Portfolio_Showcase_Admin {
 	 * @param $text
 	 *
 	 * @return string
-	 * @since 1.0.0
+	 * @since 0.0.1
 	 *
 	 */
 	function settings_version_text( $text ) {
@@ -62,7 +62,7 @@ class WP_Portfolio_Showcase_Admin {
 	 * @param $html
 	 *
 	 * @return string
-	 * @since 1.0.0
+	 * @since 0.0.1
 	 *
 	 */
 	function settings_page_logo( $html ) {

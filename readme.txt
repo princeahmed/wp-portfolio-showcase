@@ -1,6 +1,6 @@
 === WP Portfolio Showcase ===
 Contributors: princeahmed
-Tags: portfolio, showcase, gallery
+Tags: portfolio, best portfolio, filterable portfolio, portfolio plugin wordpress, portfolio plugin, showcase, gallery,
 Requires at least: 4.4
 Tested up to: 5.2.3
 Requires PHP: 5.6
@@ -17,7 +17,7 @@ Such as Slider, Lightbox Gallery, Popup Video or External Link. WP Portfolio Sho
 in high quality with best design.
 
 
-== WordPress Radio Plugin Features: ==
+== Portfolio Showcase Plugin Features: ==
 
 * Filter portfolio by portfolio category
 * Portfolio Slider
@@ -47,12 +47,12 @@ For adding a new portfolio item you need to click the **Add New Portfolio** subm
 
 == SHORT CODES: ==
 
-The Plugin provides a Shortcode for displaying your portfolio in any page:
+The Plugin provides a Shortcode for displaying your portfolio section in any page:
 
-* `[wp_portfolio_showcase]` - Use this short code in a page for displaying your portfolio items.
-   This shortcode support **count** attribute, Where you can limit how many items will be displayed.
+* `[portfolio_showcase]` - Use this short code in a page for displaying your portfolio items.
+   This shortcode support **number** attribute, Where you can limit how many items will be displayed.
 
-    **Example:** `[wp_portfolio_showcase count="9"]`
+    **Example:** `[portfolio_showcase number="9"]`
 
 
 
@@ -69,7 +69,7 @@ After activating the plugin you can create new portfolio item from Add new portf
 After installing the plugin a new page will be created titled "Portfolio".
 This page will be used for viewing all the portfolio items.
 
-You can place the portfolio showcase section in any page, by using the `[wp_portfolio_showcase]` shortcode.
+You can place the portfolio showcase section in any page, by using the `[portfolio_showcase]` shortcode.
 
 == Compatibility ==
 
@@ -94,10 +94,12 @@ Yes, of course. We do not create products for ourselves. You are always welcome 
 
 
 == Screenshots ==
-
+1. Portfolio Showcase
 
 
 
 == Changelog ==
+= 0.0.1 (12 October, 2019) =
+*   Initial release
 
 

@@ -1,3 +1,6 @@
+<?php defined('ABSPATH') || exit(); ?>
+
+
 <div class="item <?php wp_portfolio_showcase_category_class( $post->ID ); ?>">
     <div class="project_content">
         <div class="portfolio-img">

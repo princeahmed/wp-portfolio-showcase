@@ -8,30 +8,31 @@ defined( 'ABSPATH' ) || exit();
  *
  * add short codes
  *
- * @package Prince\WP_Radio
+ * @package WP_Portfolio_Showcase
  *
- * @since 1.0.0
+ * @since 0.0.1
  */
 class WP_Portfolio_Showcase_ShortCode {
 
 	/* constructor */
 	public function __construct() {
-		add_shortcode( 'wp_radio_listing', array( $this, 'listing' ) );
+		add_shortcode( 'portfolio_showcase', [ $this, 'portfolio' ] );
 	}
 
 	/**
-	 * Station listing
+	 * Portfolio Showcase
 	 *
 	 * @param $attrs
 	 */
-	function listing( $atts ) {
+	function portfolio( $atts ) {
 		$atts = shortcode_atts( array(
-			'country' => '',
-			'genre'   => '',
+			'number'         => 9,
+			'show_more'      => 'true',
+			'show_more_text' => esc_html__( 'Show More', 'wp-portfolio-showcase' ),
 		), $atts );
 
 		ob_start();
-		wp_radio_get_template( 'listing-page', ['shortcode_args' => $atts] );
+		wp_portfolio_showcase_template( 'portfolio', [ 'shortcode_args' => $atts, 'is_shortcode' => true ] );
 		$html = ob_get_clean();
 
 		return $html;

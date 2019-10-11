@@ -474,6 +474,7 @@ if ( ! class_exists( 'Settings' ) ) {
 				'field_condition'    => isset( $condition ) && ! empty( $condition ) ? $condition : '',
 				'field_operator'     => isset( $operator ) && ! empty( $operator ) ? $operator : 'and',
 				'field_class'        => isset( $class ) ? $class : '',
+				'field_prefix'        => isset( $prefix ) ? $prefix : '',
 				'field_choices'      => isset( $choices ) && ! empty( $choices ) ? $choices : array(),
 				'field_settings'     => isset( $settings ) && ! empty( $settings ) ? $settings : array(),
 				'post_id'            => prince_get_media_post_ID(),

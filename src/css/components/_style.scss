@@ -22,9 +22,37 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+  }
 
-    .item {
-      width: 33%;
+  .portfolio-col-4 .item {
+    width: 25%;
+  }
+
+  .portfolio-col-3 .item {
+    width: 33%;
+  }
+
+  .portfolio-col-2 .item {
+    width: 50%;
+  }
+
+  .portfolio-col-1 .item {
+    width: 100%;
+  }
+
+  .portfolio-more {
+    text-align: center;
+  }
+
+  @media screen and (max-width: 767px) {
+    .portfolio-items .item {
+      width: 100%;
+    }
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 991px) {
+    .portfolio-items .item {
+      width: 50%;
     }
   }
 

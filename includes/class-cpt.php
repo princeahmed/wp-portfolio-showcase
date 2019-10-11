@@ -8,9 +8,9 @@ defined( 'ABSPATH' ) || exit();
  *
  * Register Custom post types and taxonomies
  *
- * @package Prince\WP_Radio
+ * @package WP_Portfolio_Showcase
  *
- * @since 1.0.0
+ * @since 0.0.1
  */
 class WP_Portfolio_Showcase_CPT {
 
@@ -26,7 +26,7 @@ class WP_Portfolio_Showcase_CPT {
 	/**
 	 * register custom post types
 	 *
-	 * @since 1.0.0
+	 * @since 0.0.1
 	 */
 	function register_post_types() {
 		register_post_type( 'portfolio', array(
@@ -53,7 +53,7 @@ class WP_Portfolio_Showcase_CPT {
 	/**
 	 * Register custom taxonomies
 	 *
-	 * @since 1.0.0
+	 * @since 0.0.1
 	 */
 	public function register_taxonomies() {
 		register_taxonomy( 'portfolio_category', array( 'portfolio' ), array(
@@ -65,6 +65,8 @@ class WP_Portfolio_Showcase_CPT {
 			'rewrite'           => apply_filters( 'wp_portfolio_showcase_category_slug', [ 'slug' => 'portfolio-category' ] ),
 		) );
 
+		/*
+		 * TODO: implement Portfolio Tags
 		register_taxonomy( 'portfolio_tag', array( 'portfolio' ), array(
 			'hierarchical'      => false,
 			'labels'            => $this->get_taxonomy_label( 'Portfolio Tags', 'Tag', 'Tags' ),
@@ -73,6 +75,8 @@ class WP_Portfolio_Showcase_CPT {
 			'rewrite'           => apply_filters( 'wp_portfolio_showcase_tag_slug', [ 'slug' => 'portfolio-tag' ] ),
 			'query_var'         => true,
 		) );
+		*
+		*/
 
 	}
 
@@ -84,7 +88,7 @@ class WP_Portfolio_Showcase_CPT {
 	 * @param $plural
 	 *
 	 * @return array
-	 * @since 1.0.0
+	 * @since 0.0.1
 	 */
 	protected static function get_posts_labels( $menu_name, $singular, $plural, $type = 'plural' ) {
 		$labels = array(
@@ -115,7 +119,7 @@ class WP_Portfolio_Showcase_CPT {
 	 * @param $plural
 	 *
 	 * @return array
-	 * @since 1.0.0
+	 * @since 0.0.1
 	 */
 	protected static function get_taxonomy_label( $menu_name, $singular, $plural ) {
 		$labels = array(

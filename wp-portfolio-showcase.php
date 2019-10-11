@@ -2,7 +2,7 @@
 /**
  * Plugin Name: WP Portfolio Showcase
  * Plugin URI:  https://princeboss.com
- * Description: Create Your Worldwide Portfolio Showcase.
+ * Description: Create Your Portfolio Showcase.
  * Version:     0.0.1
  * Author:      Prince Ahmed
  * Author URI:  http://princeboss.com
@@ -17,7 +17,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Main initiation class
  *
- * @since 1.0.0
+ * @since 0.0.1
  */
 final class WP_Portfolio_Showcase {
 	/**
@@ -38,7 +38,7 @@ final class WP_Portfolio_Showcase {
 	 * The single instance of the class.
 	 *
 	 * @var WP_Portfolio_Showcase
-	 * @since 1.0.0
+	 * @since 0.0.1
 	 */
 	protected static $instance = null;
 
@@ -47,7 +47,7 @@ final class WP_Portfolio_Showcase {
 		$this->define_constants();
 		$this->includes();
 		$this->init_hooks();
-		do_action( 'wp_radio_loaded' );
+		do_action( 'wp_portfolio_showcase_loaded' );
 	}
 
 	/**
@@ -65,7 +65,7 @@ final class WP_Portfolio_Showcase {
 	 * Define Projects Constants.
 	 *
 	 * @return void
-	 * @since 1.0.0
+	 * @since 0.0.1
 	 *
 	 */
 	private function define_constants() {
@@ -128,7 +128,7 @@ final class WP_Portfolio_Showcase {
 	 * Initialize plugin for localization
 	 *
 	 * @return void
-	 * @since 1.0.0
+	 * @since 0.0.1
 	 *
 	 */
 	function localization_setup() {
@@ -143,7 +143,7 @@ final class WP_Portfolio_Showcase {
 	 * @return array
 	 */
 	function plugin_action_links( $links ) {
-		$links[] = '<a href="' . admin_url( 'edit.php?post_type=wp_radio&page=import-stations' ) . '">' . __( 'Settings', 'wp-portfolio-showcase' ) . '</a>';
+		$links[] = '<a href="' . admin_url( 'edit.php?post_type=portfolio&page=wp-portfolio-showcase-settings' ) . '">' . esc_html__( 'Settings', 'wp-portfolio-showcase' ) . '</a>';
 
 		return $links;
 	}
@@ -181,7 +181,7 @@ final class WP_Portfolio_Showcase {
 	 * Ensures only one instance of WP_Portfolio_Showcase is loaded or can be loaded.
 	 *
 	 * @return WP_Portfolio_Showcase - Main instance.
-	 * @since 1.0.0
+	 * @since 0.0.1
 	 * @static
 	 */
 	static function instance() {

@@ -5,7 +5,7 @@
  * @package   Prince
  * @author    Prince Ahmed <israilahmed5@gmail.com>
  * @copyright Copyright (c) 2019, Prince Ahmed
- * @since     1.0.0
+ * @since     0.0.1
  */
 
 /**
@@ -14,16 +14,16 @@
  *
  * All fields are required!
  *
- * @param     array $args The array of arguments are as follows:
- * @param     string $type Type of option.
- * @param     string $field_id The field ID.
- * @param     string $field_name The field Name.
- * @param     mixed $field_value The field value is a string or an array of values.
- * @param     string $field_desc The field description.
- * @param     string $field_std The standard value.
- * @param     string $field_class Extra CSS classes.
- * @param     array $field_choices The array of option choices.
- * @param     array $field_settings The array of settings for a list item.
+ * @param array $args The array of arguments are as follows:
+ * @param string $type Type of option.
+ * @param string $field_id The field ID.
+ * @param string $field_name The field Name.
+ * @param mixed $field_value The field value is a string or an array of values.
+ * @param string $field_desc The field description.
+ * @param string $field_std The standard value.
+ * @param string $field_class Extra CSS classes.
+ * @param array $field_choices The array of option choices.
+ * @param array $field_settings The array of settings for a list item.
  *
  * @return    string
  *
@@ -56,7 +56,7 @@ if ( ! function_exists( 'prince_display_by_type' ) ) {
  *
  * See @prince_display_by_type to see the full list of available arguments.
  *
- * @param     array     An array of arguments.
+ * @param array     An array of arguments.
  *
  * @return    string
  *
@@ -279,7 +279,7 @@ if ( ! function_exists( 'prince_type_background' ) ) {
  *
  * See @prince_display_by_type to see the full list of available arguments.
  *
- * @param     array     The options arguments
+ * @param array     The options arguments
  *
  * @return    string    The markup.
  *
@@ -391,7 +391,7 @@ if ( ! function_exists( 'prince_type_border' ) ) {
  *
  * See @prince_display_by_type to see the full list of available arguments.
  *
- * @param     array     The options arguments
+ * @param array     The options arguments
  *
  * @return    string    The markup.
  *
@@ -504,7 +504,7 @@ if ( ! function_exists( 'prince_type_box_shadow' ) ) {
  *
  * See @prince_display_by_type to see the full list of available arguments.
  *
- * @param     array     An array of arguments.
+ * @param array     An array of arguments.
  *
  * @return    string
  *
@@ -558,7 +558,7 @@ if ( ! function_exists( 'prince_type_category_checkbox' ) ) {
  *
  * See @prince_display_by_type to see the full list of available arguments.
  *
- * @param     array     An array of arguments.
+ * @param array     An array of arguments.
  *
  * @return    string
  *
@@ -615,7 +615,7 @@ if ( ! function_exists( 'prince_type_category_select' ) ) {
  *
  * See @prince_display_by_type to see the full list of available arguments.
  *
- * @param     array     An array of arguments.
+ * @param array     An array of arguments.
  *
  * @return    string
  *
@@ -664,7 +664,7 @@ if ( ! function_exists( 'prince_type_checkbox' ) ) {
  *
  * See @prince_display_by_type to see the full list of available arguments.
  *
- * @param     array     An array of arguments.
+ * @param array     An array of arguments.
  *
  * @return    string
  *
@@ -718,7 +718,7 @@ if ( ! function_exists( 'prince_type_colorpicker' ) ) {
  *
  * See @prince_display_by_type to see the full list of available arguments.
  *
- * @param     array     An array of arguments.
+ * @param array     An array of arguments.
  *
  * @return    string
  *
@@ -741,7 +741,7 @@ if ( ! function_exists( 'prince_type_colorpicker_opacity' ) ) {
  *
  * See @prince_display_by_type to see the full list of available arguments.
  *
- * @param     array     An array of arguments.
+ * @param array     An array of arguments.
  *
  * @return    string
  *
@@ -786,7 +786,7 @@ if ( ! function_exists( 'prince_type_css' ) ) {
  *
  * See @prince_display_by_type to see the full list of available arguments.
  *
- * @param     array     An array of arguments.
+ * @param array     An array of arguments.
  *
  * @return    string
  *
@@ -850,7 +850,7 @@ if ( ! function_exists( 'prince_type_custom_post_type_checkbox' ) ) {
  *
  * See @prince_display_by_type to see the full list of available arguments.
  *
- * @param     array     An array of arguments.
+ * @param array     An array of arguments.
  *
  * @return    string
  *
@@ -917,7 +917,7 @@ if ( ! function_exists( 'prince_type_custom_post_type_select' ) ) {
  *
  * See @prince_display_by_type to see the full list of available arguments.
  *
- * @param     array     An array of arguments.
+ * @param array     An array of arguments.
  *
  * @return    string
  *
@@ -940,10 +940,11 @@ if ( ! function_exists( 'prince_type_date_picker' ) ) {
 		/**
 		 * Filter the addition of the readonly attribute.
 		 *
-		 * @since     1.0.0
-		 *
 		 * @param bool $is_readonly Whether to add the 'readonly' attribute. Default 'false'.
 		 * @param string $field_id The field ID.
+		 *
+		 * @since     1.0.0
+		 *
 		 */
 		$is_readonly = apply_filters( 'prince_type_date_picker_readonly', false, $field_id );
 
@@ -975,7 +976,7 @@ if ( ! function_exists( 'prince_type_date_picker' ) ) {
  *
  * See @prince_display_by_type to see the full list of available arguments.
  *
- * @param     array     An array of arguments.
+ * @param array     An array of arguments.
  *
  * @return    string
  *
@@ -998,10 +999,11 @@ if ( ! function_exists( 'prince_type_date_time_picker' ) ) {
 		/**
 		 * Filter the addition of the readonly attribute.
 		 *
-		 * @since     1.0.0
-		 *
 		 * @param bool $is_readonly Whether to add the 'readonly' attribute. Default 'false'.
 		 * @param string $field_id The field ID.
+		 *
+		 * @since     1.0.0
+		 *
 		 */
 		$is_readonly = apply_filters( 'prince_type_date_time_picker_readonly', false, $field_id );
 
@@ -1033,7 +1035,7 @@ if ( ! function_exists( 'prince_type_date_time_picker' ) ) {
  *
  * See @prince_display_by_type to see the full list of available arguments.
  *
- * @param     array     The options arguments
+ * @param array     The options arguments
  *
  * @return    string    The markup.
  *
@@ -1116,7 +1118,7 @@ if ( ! function_exists( 'prince_type_dimension' ) ) {
  *
  * See @prince_display_by_type to see the full list of available arguments.
  *
- * @param     array     The options arguments
+ * @param array     The options arguments
  *
  * @return    string    The gallery metabox markup.
  *
@@ -1213,7 +1215,7 @@ if ( ! function_exists( 'prince_type_gallery' ) ) {
  *
  * See @prince_display_by_type to see the full list of available arguments.
  *
- * @param     array     An array of arguments.
+ * @param array     An array of arguments.
  *
  * @return    string
  *
@@ -1344,7 +1346,7 @@ if ( ! function_exists( 'prince_type_google_fonts' ) ) {
  *
  * See @prince_display_by_type to see the full list of available arguments.
  *
- * @param     array     An array of arguments.
+ * @param array     An array of arguments.
  *
  * @return    string
  *
@@ -1389,7 +1391,7 @@ if ( ! function_exists( 'prince_type_javascript' ) ) {
  *
  * See @prince_display_by_type to see the full list of available arguments.
  *
- * @param     array     The options arguments
+ * @param array     The options arguments
  *
  * @return    string    The markup.
  *
@@ -1464,7 +1466,7 @@ if ( ! function_exists( 'prince_type_link_color' ) ) {
  *
  * See @prince_display_by_type to see the full list of available arguments.
  *
- * @param     array     An array of arguments.
+ * @param array     An array of arguments.
  *
  * @return    string
  *
@@ -1551,7 +1553,7 @@ if ( ! function_exists( 'prince_type_list_item' ) ) {
  *
  * See @prince_display_by_type to see the full list of available arguments.
  *
- * @param     array     An array of arguments.
+ * @param array     An array of arguments.
  *
  * @return    string
  *
@@ -1607,7 +1609,7 @@ if ( ! function_exists( 'prince_type_measurement' ) ) {
  *
  * See @prince_display_by_type to see the full list of available arguments.
  *
- * @param     array     An array of arguments.
+ * @param array     An array of arguments.
  *
  * @return    string
  *
@@ -1660,7 +1662,7 @@ if ( ! function_exists( 'prince_type_numeric_slider' ) ) {
  *
  * See @prince_display_by_type to see the full list of available arguments.
  *
- * @param     array     The options arguments
+ * @param array     The options arguments
  *
  * @return    string    The gallery metabox markup.
  *
@@ -1693,21 +1695,23 @@ if ( ! function_exists( 'prince_type_on_off' ) ) {
 				/**
 				 * Filter the value of the On button.
 				 *
-				 * @since     1.0.0
-				 *
 				 * @param string The On button value. Default 'on'.
 				 * @param string $field_id The field ID.
 				 * @param string $filter_id For filtering both on/off value with one function.
+				 *
+				 * @since     1.0.0
+				 *
 				 */
 				'value' => apply_filters( 'prince_on_off_switch_on_value', 'on', $field_id, 'on' ),
 				/**
 				 * Filter the label of the On button.
 				 *
-				 * @since     1.0.0
-				 *
 				 * @param string The On button label. Default 'On'.
 				 * @param string $field_id The field ID.
 				 * @param string $filter_id For filtering both on/off label with one function.
+				 *
+				 * @since     1.0.0
+				 *
 				 */
 				'label' => apply_filters( 'prince_on_off_switch_on_label', __( 'On', 'wp-portfolio-showcase' ), $field_id, 'on' )
 			),
@@ -1715,21 +1719,23 @@ if ( ! function_exists( 'prince_type_on_off' ) ) {
 				/**
 				 * Filter the value of the Off button.
 				 *
-				 * @since     1.0.0
-				 *
 				 * @param string The Off button value. Default 'off'.
 				 * @param string $field_id The field ID.
 				 * @param string $filter_id For filtering both on/off value with one function.
+				 *
+				 * @since     1.0.0
+				 *
 				 */
 				'value' => apply_filters( 'prince_on_off_switch_off_value', 'off', $field_id, 'off' ),
 				/**
 				 * Filter the label of the Off button.
 				 *
-				 * @since     1.0.0
-				 *
 				 * @param string The Off button label. Default 'Off'.
 				 * @param string $field_id The field ID.
 				 * @param string $filter_id For filtering both on/off label with one function.
+				 *
+				 * @since     1.0.0
+				 *
 				 */
 				'label' => apply_filters( 'prince_on_off_switch_off_label', __( 'Off', 'wp-portfolio-showcase' ), $field_id, 'off' )
 			)
@@ -1738,22 +1744,23 @@ if ( ! function_exists( 'prince_type_on_off' ) ) {
 		/**
 		 * Filter the width of the On/Off switch.
 		 *
-		 * @since     1.0.0
-		 *
 		 * @param string The switch width. Default '100px'.
 		 * @param string $field_id The field ID.
+		 *
+		 * @since     1.0.0
+		 *
 		 */
 		$switch_width = apply_filters( 'prince_on_off_switch_width', '100px', $field_id );
 
-		$disabled = !empty($field_class) && $field_class == 'disabled' ? 'disabled' : '';
+		$disabled = ! empty( $field_class ) && $field_class == 'disabled' ? 'disabled' : '';
 
-		echo '<div class="on-off-switch '.$disabled.'"' . ( $switch_width != '100px' ? sprintf( ' style="width:%s"', $switch_width ) : '' ) . '>';
+		echo '<div class="on-off-switch ' . $disabled . '"' . ( $switch_width != '100px' ? sprintf( ' style="width:%s"', $switch_width ) : '' ) . '>';
 
 		/* build radio */
 		foreach ( (array) $field_choices as $key => $choice ) {
 
 			echo '
-            <input type="radio" '.$disabled.' name="' . esc_attr( $field_name ) . '" id="' . esc_attr( $field_id ) . '-' . esc_attr( $key ) . '" value="' . esc_attr( $choice['value'] ) . '"' . checked( $field_value, $choice['value'], false ) . ' class="radio prince-ui-radio ' . esc_attr( $field_class ) . '" />
+            <input type="radio" ' . $disabled . ' name="' . esc_attr( $field_name ) . '" id="' . esc_attr( $field_id ) . '-' . esc_attr( $key ) . '" value="' . esc_attr( $choice['value'] ) . '"' . checked( $field_value, $choice['value'], false ) . ' class="radio prince-ui-radio ' . esc_attr( $field_class ) . '" />
             <label for="' . esc_attr( $field_id ) . '-' . esc_attr( $key ) . '" onclick="">' . esc_attr( $choice['label'] ) . '</label>';
 		}
 
@@ -1774,7 +1781,7 @@ if ( ! function_exists( 'prince_type_on_off' ) ) {
  *
  * See @prince_display_by_type to see the full list of available arguments.
  *
- * @param     array     An array of arguments.
+ * @param array     An array of arguments.
  *
  * @return    string
  *
@@ -1835,7 +1842,7 @@ if ( ! function_exists( 'prince_type_page_checkbox' ) ) {
  *
  * See @prince_display_by_type to see the full list of available arguments.
  *
- * @param     array     An array of arguments.
+ * @param array     An array of arguments.
  *
  * @return    string
  *
@@ -1899,7 +1906,7 @@ if ( ! function_exists( 'prince_type_page_select' ) ) {
  *
  * See @prince_display_by_type to see the full list of available arguments.
  *
- * @param     array     An array of arguments.
+ * @param array     An array of arguments.
  *
  * @return    string
  *
@@ -1960,7 +1967,7 @@ if ( ! function_exists( 'prince_type_post_checkbox' ) ) {
  *
  * See @prince_display_by_type to see the full list of available arguments.
  *
- * @param     array     An array of arguments.
+ * @param array     An array of arguments.
  *
  * @return    string
  *
@@ -2024,7 +2031,7 @@ if ( ! function_exists( 'prince_type_post_select' ) ) {
  *
  * See @prince_display_by_type to see the full list of available arguments.
  *
- * @param     array     An array of arguments.
+ * @param array     An array of arguments.
  *
  * @return    string
  *
@@ -2068,7 +2075,7 @@ if ( ! function_exists( 'prince_type_radio' ) ) {
  *
  * See @prince_display_by_type to see the full list of available arguments.
  *
- * @param     array     An array of arguments.
+ * @param array     An array of arguments.
  *
  * @return    string
  *
@@ -2113,11 +2120,12 @@ if ( ! function_exists( 'prince_type_radio_image' ) ) {
 			/**
 			 * Filter the image attributes.
 			 *
-			 * @since     1.0.0
-			 *
 			 * @param string $attributes The image attributes.
 			 * @param string $field_id The field ID.
 			 * @param array $choice The choice.
+			 *
+			 * @since     1.0.0
+			 *
 			 */
 			$attributes = apply_filters( 'prince_type_radio_image_attributes', '', $field_id, $choice );
 
@@ -2140,7 +2148,7 @@ if ( ! function_exists( 'prince_type_radio_image' ) ) {
  *
  * See @prince_display_by_type to see the full list of available arguments.
  *
- * @param     array     An array of arguments.
+ * @param array     An array of arguments.
  *
  * @return    string
  *
@@ -2169,6 +2177,10 @@ if ( ! function_exists( 'prince_type_select' ) ) {
 
 		/* format setting inner wrapper */
 		echo '<div class="format-setting-inner">';
+
+		if ( ! empty( $field_prefix ) ) {
+			echo '<strong class="alignleft" style="margin: 6px;">' . $field_prefix . '</strong>';
+		}
 
 		/* build select */
 		echo '<select name="' . esc_attr( $field_name ) . '" id="' . esc_attr( $field_id ) . '" class="prince-ui-select ' . esc_attr( $field_class ) . '">';
@@ -2200,7 +2212,7 @@ if ( ! function_exists( 'prince_type_select' ) ) {
  * we can unset those sidebars either manually or by using a regular expression if we
  * have a common name like footer-sidebar-$i.
  *
- * @param     array     An array of arguments.
+ * @param array     An array of arguments.
  *
  * @return    string
  *
@@ -2266,7 +2278,7 @@ if ( ! function_exists( 'prince_type_sidebar_select' ) ) {
  *
  * See @prince_display_by_type to see the full list of available arguments.
  *
- * @param     array     An array of arguments.
+ * @param array     An array of arguments.
  *
  * @return    string
  *
@@ -2340,7 +2352,7 @@ if ( ! function_exists( 'prince_type_slider' ) ) {
  *
  * See @prince_display_by_type to see the full list of available arguments.
  *
- * @param     array     An array of arguments.
+ * @param array     An array of arguments.
  *
  * @return    string
  *
@@ -2507,7 +2519,7 @@ if ( ! function_exists( 'prince_type_social_links' ) ) {
  *
  * See @prince_display_by_type to see the full list of available arguments.
  *
- * @param     array     An array of arguments.
+ * @param array     An array of arguments.
  *
  * @return    string
  *
@@ -2610,7 +2622,7 @@ if ( ! function_exists( 'prince_type_spacing' ) ) {
  *
  * See @prince_display_by_type to see the full list of available arguments.
  *
- * @param     array     An array of arguments.
+ * @param array     An array of arguments.
  *
  * @return    string
  *
@@ -2640,7 +2652,7 @@ if ( ! function_exists( 'prince_type_tab' ) ) {
  *
  * See @prince_display_by_type to see the full list of available arguments.
  *
- * @param     array     An array of arguments.
+ * @param array     An array of arguments.
  *
  * @return    string
  *
@@ -2694,7 +2706,7 @@ if ( ! function_exists( 'prince_type_tag_checkbox' ) ) {
  *
  * See @prince_display_by_type to see the full list of available arguments.
  *
- * @param     array     An array of arguments.
+ * @param array     An array of arguments.
  *
  * @return    string
  *
@@ -2751,7 +2763,7 @@ if ( ! function_exists( 'prince_type_tag_select' ) ) {
  *
  * See @prince_display_by_type to see the full list of available arguments.
  *
- * @param     array     An array of arguments.
+ * @param array     An array of arguments.
  *
  * @return    string
  *
@@ -2811,7 +2823,7 @@ if ( ! function_exists( 'prince_type_taxonomy_checkbox' ) ) {
  *
  * See @prince_display_by_type to see the full list of available arguments.
  *
- * @param     array     An array of arguments.
+ * @param array     An array of arguments.
  *
  * @return    string
  *
@@ -2874,7 +2886,7 @@ if ( ! function_exists( 'prince_type_taxonomy_select' ) ) {
  *
  * See @prince_display_by_type to see the full list of available arguments.
  *
- * @param     array     An array of arguments.
+ * @param array     An array of arguments.
  *
  * @return    string
  *
@@ -2914,11 +2926,55 @@ if ( ! function_exists( 'prince_type_text' ) ) {
 }
 
 /**
+ * Number option type.
+ *
+ * See @prince_display_by_type to see the full list of available arguments.
+ *
+ * @param array     An array of arguments.
+ *
+ * @return    string
+ *
+ * @access    public
+ * @since     1.0.0
+ */
+if ( ! function_exists( 'prince_type_number' ) ) {
+
+	function prince_type_number( $args = array() ) {
+
+		/* turns arguments array into variables */
+		extract( $args );
+
+		/* verify a description */
+		$has_desc = $field_desc ? true : false;
+
+		/* format setting outer wrapper */
+		echo '<div class="format-setting type-text ' . ( $has_desc ? 'has-desc' : 'no-desc' ) . '">';
+
+		/* description */
+		echo $has_desc ? '<div class="description">' . htmlspecialchars_decode( $field_desc ) . '</div>' : '';
+
+		/* format setting inner wrapper */
+		echo '<div class="format-setting-inner">';
+
+		$field_attrs = isset( $field_attrs ) ? $field_attrs : '';
+
+		/* build text input */
+		echo '<input type="number" name="' . esc_attr( $field_name ) . '" id="' . esc_attr( $field_id ) . '" value="' . esc_attr( $field_value ) . '" class="widefat prince-ui-input ' . esc_attr( $field_class ) . '" ' . $field_attrs . ' />';
+
+		echo '</div>';
+
+		echo '</div>';
+
+	}
+
+}
+
+/**
  * Textarea option type.
  *
  * See @prince_display_by_type to see the full list of available arguments.
  *
- * @param     array     An array of arguments.
+ * @param array     An array of arguments.
  *
  * @return    string
  *
@@ -2973,7 +3029,7 @@ if ( ! function_exists( 'prince_type_textarea' ) ) {
  *
  * See @prince_display_by_type to see the full list of available arguments.
  *
- * @param     array     An array of arguments.
+ * @param array     An array of arguments.
  *
  * @return    string
  *
@@ -3023,7 +3079,7 @@ if ( ! function_exists( 'prince_type_textarea_simple' ) ) {
  *
  * See @prince_display_by_type to see the full list of available arguments.
  *
- * @param     array     An array of arguments.
+ * @param array     An array of arguments.
  *
  * @return    string
  *
@@ -3054,7 +3110,7 @@ if ( ! function_exists( 'prince_type_textblock' ) ) {
  *
  * See @prince_display_by_type to see the full list of available arguments.
  *
- * @param     array     An array of arguments.
+ * @param array     An array of arguments.
  *
  * @return    string
  *
@@ -3085,7 +3141,7 @@ if ( ! function_exists( 'prince_type_textblock_titled' ) ) {
  *
  * See @prince_display_by_type to see the full list of available arguments.
  *
- * @param     array     An array of arguments.
+ * @param array     An array of arguments.
  *
  * @return    string
  *
@@ -3256,7 +3312,7 @@ if ( ! function_exists( 'prince_type_typography' ) ) {
  *
  * See @prince_display_by_type to see the full list of available arguments.
  *
- * @param     array     An array of arguments.
+ * @param array     An array of arguments.
  *
  * @return    string
  *

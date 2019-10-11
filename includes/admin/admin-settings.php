@@ -1,20 +1,25 @@
 <?php
 
-defined( 'ABSPATH' ) || exit;
+defined( 'ABSPATH' ) || exit();
 
-//option name
+//set settings option name
 add_filter( 'prince_options_id', function () {
 	return 'wp_portfolio_showcase_settings';
 } );
 
-//settings menu slug
+//set prince_settings_id
+add_filter( 'prince_settings_id', function () {
+	return 'wp_portfolio_showcase_prince_settings';
+} );
+
+//set settings page menu slug
 add_filter( 'prince_settings_menu_slug', function () {
 	return 'wp-portfolio-showcase-settings';
 } );
 
-//settings page title
+//set settings page title
 add_filter( 'prince_settings_page_title', function () {
-	return 'WP Portfolio Showcase Settings';
+	return esc_html__( 'WP Portfolio Showcase Settings', 'wp-portfolio-showcase' );
 } );
 
 /**
@@ -26,7 +31,7 @@ add_action( 'admin_init', 'wp_portfolio_showcase_settings' );
  * Build the custom settings & update Prince.
  *
  * @return    void
- * @since     1.0.0
+ * @since     0.0.1
  */
 function wp_portfolio_showcase_settings() {
 
@@ -51,7 +56,12 @@ function wp_portfolio_showcase_settings() {
 			array(
 				'id'    => 'general',
 				'icon'  => 'dashicons dashicons-admin-generic',
-				'title' => __( 'General Settings', 'wp-portfolio-showcase' )
+				'title' => esc_html__( 'General Settings', 'wp-portfolio-showcase' )
+			),
+			array(
+				'id'    => 'display',
+				'icon'  => 'dashicons dashicons-laptop',
+				'title' => esc_html__( 'Display Settings', 'wp-portfolio-showcase' )
 			),
 
 		),
@@ -59,29 +69,45 @@ function wp_portfolio_showcase_settings() {
 			//general
 			array(
 				'id'      => 'delete_data',
-				'label'   => __( 'Delete Data on Plugin Uninstalling', 'wp_radio' ),
-				'desc'    => __( 'Turn on to delete all the data (Portfolio, Settings) on uninstalling of this plugin.', 'wp_radio' ),
+				'label'   => esc_html__( 'Delete Data on Plugin Uninstalling', 'wp-portfolio-showcase' ),
+				'desc'    => esc_html__( 'Turn on to delete all the data (Portfolio, Settings) on uninstalling of this plugin.', 'wp-portfolio-showcase' ),
 				'std'     => 'off',
 				'type'    => 'on_off',
 				'section' => 'general'
 			),
 
+			//start display settings
 			array(
 				'id'      => 'portfolio_page',
-				'label'   => __( 'Portfolio Page', 'wp_radio' ),
-				'desc'    => __( 'Select he portfolio page where all the portfolio will be displayed', 'wp_radio' ),
-				'std'     => get_option('wp_portfolio_showcase_page'),
+				'label'   => esc_html__( 'Portfolio Page', 'wp-portfolio-showcase' ),
+				'desc'    => esc_html__( 'Select the portfolio page where the portfolio will be displayed', 'wp-portfolio-showcase' ),
+				'std'     => get_option( 'wp_portfolio_showcase_page' ),
 				'type'    => 'page_select',
-				'section' => 'general'
+				'section' => 'display'
 			),
 
 			array(
 				'id'      => 'posts_per_page',
-				'label'   => __( 'Portfolio per Page', 'wp_radio' ),
-				'desc'    => __( 'How many portfolio will be displayed in the portfolio page', 'wp_radio' ),
+				'label'   => __( 'Items per Page', 'wp-portfolio-showcase' ),
+				'desc'    => __( 'Enter the number, How many portfolio items will be displayed in the default portfolio page', 'wp-portfolio-showcase' ),
 				'std'     => 12,
-				'type'    => 'text',
-				'section' => 'general'
+				'type'    => 'number',
+				'section' => 'display'
+			),
+
+			array(
+				'id'      => 'columns',
+				'label'   => esc_html__( 'Portfolio Columns', 'wp-portfolio-showcase' ),
+				'desc'    => esc_html__( 'Select how many portfolio items will be displayed per row in Desktop. For tablet the default value is 2 and for mobile the value is 1', 'wp-portfolio-showcase' ),
+				'std'     => 3,
+				'type'    => 'select',
+				'choices' => [
+					1 => 1,
+					2 => 2,
+					3 => 3,
+					4 => 4,
+				],
+				'section' => 'display'
 			),
 		)
 	);
