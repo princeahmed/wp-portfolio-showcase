@@ -11,7 +11,7 @@
  */
 
 // don't call the file directly
-defined( 'ABSPATH' ) || exit;
+defined( 'ABSPATH' ) || exit();
 
 
 /**
@@ -90,6 +90,8 @@ final class WP_Portfolio_Showcase {
 		include_once WP_PORTFOLIO_SHOWCASE_INCLUDES . '/hook-functions.php';
 		include_once WP_PORTFOLIO_SHOWCASE_INCLUDES . '/class-cpt.php';
 		include_once WP_PORTFOLIO_SHOWCASE_INCLUDES . '/enqueue.php';
+		include_once WP_PORTFOLIO_SHOWCASE_INCLUDES . '/template-functions.php';
+		include_once WP_PORTFOLIO_SHOWCASE_INCLUDES . '/class-shortcode.php';
 
 		//admin includes
 		if ( is_admin() ) {
@@ -97,12 +99,6 @@ final class WP_Portfolio_Showcase {
 			include_once WP_PORTFOLIO_SHOWCASE_INCLUDES . '/admin/class-admin.php';
 			include_once WP_PORTFOLIO_SHOWCASE_INCLUDES . '/admin/class-metabox.php';
 			include_once WP_PORTFOLIO_SHOWCASE_INCLUDES . '/admin/admin-settings.php';
-		}
-
-		//frontend includes
-		if ( ! is_admin() ) {
-			include_once WP_PORTFOLIO_SHOWCASE_INCLUDES . '/template-functions.php';
-			include_once WP_PORTFOLIO_SHOWCASE_INCLUDES . '/class-shortcode.php';
 		}
 
 	}
@@ -166,7 +162,7 @@ final class WP_Portfolio_Showcase {
 	function admin_notices() {
 		$notices = get_option( sanitize_key( 'wp_portfolio_notices' ), [] );
 		foreach ( $notices as $notice ) { ?>
-            <div class="notice notice-<?php echo $notice['class']; ?>">
+            <div class="notice is-dismissible notice-<?php echo $notice['class']; ?>">
                 <p><?php echo $notice['message']; ?></p>
             </div>
 			<?php

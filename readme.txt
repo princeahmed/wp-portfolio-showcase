@@ -37,7 +37,7 @@ The installation is fairly simple and straightforward. If you have ever installe
     The **Portfolio** page is the default page, where all the portfolio will be displayed.
 
 3.  You can use the the automatically created **Portfolio** page for your Portfolio page.
-    Or, you can Use `[wp_portfolio_showcase]` short code on any page for showing your portfolio.
+    Or, you can Use `[portfolio_showcase]` short code on any page for showing your portfolio.
 
 
 == ADD NEW PORTFOLIO: ==
@@ -50,16 +50,19 @@ For adding a new portfolio item you need to click the **Add New Portfolio** subm
 The Plugin provides a Shortcode for displaying your portfolio section in any page:
 
 * `[portfolio_showcase]` - Use this short code in a page for displaying your portfolio items.
-   This shortcode support **number** attribute, Where you can limit how many items will be displayed.
+   This shortcode support **number, show_more and show_more_text** attributes.
 
-    **Example:** `[portfolio_showcase number="9"]`
+    **Example:** `[portfolio_showcase number="9" show_more="true" show_more_text="Show More"]`
 
 
 
 == SETTINGS: ==
 
 On the Settings page, under the Display settings tab, you can select the page for default portfolio page from the **Portfolio Page** setting field.
+
 And in the **Items per Page** setting field you can control how many items will be shown in the page.
+
+And int the **Portfolio Columns** setting field you can select how many portfolio items will be displayed per row in Desktop. For tablet the default value is 2 and for mobile the value is 1
 
 
 == HOW DOES IT WORK / FUNCTIONALITY EXPLAINED: ==
@@ -89,12 +92,35 @@ This may have bugs and lack of features. If you want to contribute to this proje
 
 == Frequently Asked Questions ==
 
+= How I can use the shortcode to display the portfolio? =
+The plugin provide `[portfolio_showcase]` shortcode to display the portfolio in any page. Use this short code in a page for displaying your portfolio items.
+This shortcode supports **number, show_more and show_more_text** attributes.
+
+Use the **number** attribute to limit how many portfolio items will be displayed, default value is **9**.
+
+Use the **show_more** attribute whether the show more button will be displayed or not under the portfolio items.
+Default value is **true**. Change to **false** if you don't want to display the show more button.
+
+Use the **show_more_text** attribute to change the show more button text. Default value is **Show More**.
+Use this shortcode only if you display the show more button.
+
+**Example:** `[portfolio_showcase number="9" show_more="true" show_more_text="Show More"]`
+
+
 = Can I ask/suggest for a new feature? =
 Yes, of course. We do not create products for ourselves. You are always welcome to suggest new features and improvements.
 
 
 == Screenshots ==
 1. Portfolio Showcase
+2. Default Type Popup Portfolio Details
+3. Lightbox Gallery Type Popup Portfolio
+4. Video Type Popup Portfolio
+5. Hover Effects of Portfolio Item
+6. Select Portfolio Type on Adding New Portfolio
+7. Portfolio Project Details
+8. Portfolio Gallery and Video
+9. Display Settings
 
 
 
